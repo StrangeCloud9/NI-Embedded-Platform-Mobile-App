@@ -5,7 +5,7 @@ This is a joint project with National Instruments which aims to design and compl
 
 ###  Workflow 
 
-![](http://github.com/StrangeCloud9/NI-Embedded-Platform-Mobile-App/raw/master/images/NI1.png)
+![](http://github.com/StrangeCloud9/NI-Embedded-Platform-Mobile-App/blob/master/images/NI1.png)
 
 * Settle the embedded data monitoring platform and connect the sensors. 
 * Trans the IP address of embedded devices into QR code by our app.
@@ -15,11 +15,11 @@ This is a joint project with National Instruments which aims to design and compl
 
 Data analysis and the front end are separated, thereby increasing the robustness of the mobile application.
 
-![](http://github.com/StrangeCloud9/NI-Embedded-Platform-Mobile-App/raw/master/images/NI2.png)
+![](http://github.com/StrangeCloud9/NI-Embedded-Platform-Mobile-App/blob/master/images/NI2.png)
 
 
 ### Visualization 
 
 Allow data monitor to analyze the data collected from embedded data monitoring devices through mobile devices. 
 
-![](http://github.com/StrangeCloud9/NI-Embedded-Platform-Mobile-App/raw/master/images/NI3.png)
+![](http://github.com/StrangeCloud9/NI-Embedded-Platform-Mobile-App/blob/master/images/NI3.png)
