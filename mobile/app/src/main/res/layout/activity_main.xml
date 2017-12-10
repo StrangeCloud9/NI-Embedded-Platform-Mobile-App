@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="#1e1e1e">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="75pt"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/erweimapic"
+            android:layout_width="90pt"
+            android:layout_height="75pt"
+            android:layout_alignParentLeft="true"
+            android:src = "@drawable/saoyisao"/>
+        <LinearLayout
+            android:layout_width="80pt"
+            android:layout_height="75pt"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10pt"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/saoyisao"
+                android:layout_width="387px"
+                android:layout_height="144px"
+                android:gravity="center_vertical"
+                android:background="@drawable/bnsaoyisao"
+                />
+            <Button
+                android:id="@+id/stopConnect"
+                android:layout_width="387px"
+                android:layout_height="144px"
+                android:gravity="center_vertical"
+                android:background="@drawable/stopconnect"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/pic1"
+        android:layout_width="150pt"
+        android:layout_height="80pt"
+        android:src = "@drawable/chartpic"
+        android:layout_gravity="center"/>
+
+    <ListView
+        android:id="@+id/listView_data"
+        android:dividerHeight="0.5pt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#429b95">
+    </ListView>
+</LinearLayout>

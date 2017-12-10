@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_thermometer"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:gravity="bottom|center"
+    android:keepScreenOn="true"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="bottom|center" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <!-- 顶部图片 -->
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/background_top" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="100.0"
+                android:orientation="horizontal" >
+
+                <!-- 横向空白占1份 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center" >
+                </LinearLayout>
+
+                <!-- 横向占4份 -->
+                <LinearLayout
+                    android:id="@+id/meter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="4"
+                    android:animationCache="true"
+                    android:background="@drawable/thermometer_dial"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:persistentDrawingCache="all" >
+
+                    <!-- 横向占189份,刻度表左边刻度摄氏温度所占比例 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="189"
+                        android:visibility="invisible" />
+
+                    <!-- 横向占69份,刻度表水银柱子所在区域所占比例 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="69"
+                        android:orientation="vertical" >
+
+                        <!-- 竖向占131.0份,刻度表50°以上的部分 -->
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="131.0" />
+
+                        <!--
+                              	竖向占773.0份,水银针正好等于刻度表从-20°到50°
+ 							   	因为柱子和圆球直接有点断层，把773变成774
+ 							   	默认不显示柱子，当有传感器数据时，才显示出来
+                        -->
+                        <LinearLayout
+                            android:id="@+id/alcohol"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="774.0"
+                            android:background="@drawable/alcohol"
+                            android:orientation="horizontal"
+                            android:visibility="invisible" />
+
+                        <!--
+                             	竖向占104.0份 ,刻度表-20°以上的部分
+								因为柱子和圆球直接有点断层，把104变成103
+                        -->
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="103.0" />
+                    </LinearLayout>
+
+                    <!-- 横向占189份,刻度表右边刻度华氏温度所占比例 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="187"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <!-- 横向占4份 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="150dp"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingLeft="30dp" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <!-- 摄氏温度 -->
+                        <TextView
+                            android:id="@+id/thermo_c"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#e9bc57"
+                            android:textSize="38sp" />
+                        <!-- 摄氏温度图标 -->
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="2dp"
+                            android:src="@drawable/thermo_c" />
+                    </LinearLayout>
+
+                    <!-- 分割线 -->
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/divider" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <!-- 华氏温度 -->
+                        <TextView
+                            android:id="@+id/thermo_f"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#dadada"
+                            android:textSize="18sp" />
+                        <!-- 华氏温度图标 -->
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="2dp"
+                            android:src="@drawable/thermo_f" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 横向空白占1份 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center" >
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+            </LinearLayout>
+
+            <!-- 尾部图片 -->
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/background_bottom" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>
